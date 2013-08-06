@@ -1,0 +1,32 @@
+html.noscroll, html.noscroll body {
+    overflow: hidden;
+    }
+    
+/* ANIMATION */
+.dd-a-fade-leave {
+     -webkit-transition: 0.2s linear all; /* Safari/Chrome */
+     -moz-transition: 0.2s linear all; /* Firefox */
+     -ms-transition: 0.2s linear all; /* IE10 */
+     -o-transition: 0.2s linear all; /* Opera */
+     transition: 0.2s linear all; /* Future Browsers */
+     
+     /* The animation preparation code */
+     opacity: 1;
+    }    
+    .dd-a-fade-leave.dd-a-fade-leave-active {
+         opacity: 0;
+        }
+.dd-a-fade-enter {
+     -webkit-transition: 0.2s linear all; /* Safari/Chrome */
+     -moz-transition: 0.2s linear all; /* Firefox */
+     -ms-transition: 0.2s linear all; /* IE10 */
+     -o-transition: 0.2s linear all; /* Opera */
+     transition: 0.2s linear all; /* Future Browsers */
+     
+     /* The animation preparation code */
+     opacity: 0;
+     
+    }
+    .dd-a-fade-enter.dd-a-fade-enter-active {
+         opacity: 1;
+        }             

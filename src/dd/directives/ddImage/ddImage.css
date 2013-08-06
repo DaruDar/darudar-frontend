@@ -1,0 +1,40 @@
+.dd-b-modalimage {
+    width: 100%;
+    height: 100%;
+    }  
+    .dd-b-modalimage .dd-c-zoomin {
+        width: 100%;
+        height: 100%;
+        background: transparent no-repeat;
+        position: absolute;
+        z-index: 1;
+        display: none;
+        cursor: pointer;
+        cursor: -webkit-zoom-out;
+        cursor: -moz-zoom-out;
+        } 
+        .dd-b-modalimage.mod_inzoom .dd-c-zoomin {
+            display: block;
+            }
+    .dd-b-modalimage .dd-c-image-hh {
+        display: table;
+        height: 100%;
+        margin: 0 auto;
+        }     
+        .dd-b-modalimage .dd-c-image-h {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            }      
+            .dd-b-modalimage .dd-c-title {
+                color: white;
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                }
+            .dd-b-modalimage.mod_zoom .dd-c-img {
+                cursor: pointer;
+                cursor: -webkit-zoom-in;
+                cursor: -moz-zoom-in;
+                }

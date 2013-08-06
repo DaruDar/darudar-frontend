@@ -1,0 +1,20 @@
+.dd-b-gallery {
+    }
+    .dd-b-gallery-item {
+        margin: 0 6px 6px 0;
+        position: relative;
+        float: left;
+        display: block;
+        }
+        .dd-b-gallery-item.mod_last {
+            margin: 0 0px 6px 0;
+            }
+        .dd-b-gallery-item-img {
+            }
+            
+.dd-b-gallery.mod_big .dd-b-gallery-item {
+    margin: 0 0px 6px 0;
+    }
+    .dd-b-gallery.mod_big .dd-b-gallery-item:first-child {
+        margin: 0 6px 6px 0;
+        }          

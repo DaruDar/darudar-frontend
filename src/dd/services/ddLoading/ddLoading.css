@@ -1,0 +1,17 @@
+.dd-b-loading {
+    display: block;
+    background: #fff url(i/loading.gif) no-repeat 50% 50%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    position: absolute;
+    }
+    .dd-b-loading.dd-a-fade-leave {
+        background-image: none;
+        }
+/*MOD TRANSPARENT*/
+.dd-b-loading.mod_transparent {
+    background-color: transparent;
+    }

@@ -1,0 +1,7 @@
+@ngdoc overview
+@name API Reference
+@description
+
+Use the API Reference documentation when you need more information about a specific feature. Check out
+{@link misc/guide/ Developer Guide} for DaruDar concepts. If you are new to AngularJS check out
+{@link http://docs.angularjs.org/tutorial/ AngularJS Tutorial}.
