@@ -125,8 +125,8 @@ defineDirective('ddImage', ["$ddImage", '$ddPopup', '$compile', '$rootScope', '$
                                             width: Math.min(width, windowSize.width),
                                             height: Math.min(height, windowSize.height)
                                         }
-                                        viewOffset.left += (scope.viewSize.width - viewSize.width) / 2;
-                                        viewOffset.top += (scope.viewSize.height - viewSize.height) / 2;
+                                        viewOffset.left -= (scope.viewSize.width - viewSize.width) / 2;
+                                        viewOffset.top -= (scope.viewSize.height - viewSize.height) / 2;
                                         scope.offset = getOffset.call(scope, event, position, viewOffset);
 
                                     }
