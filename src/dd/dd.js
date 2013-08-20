@@ -1,6 +1,8 @@
 /**
  * @requires jquery/jquery.js
  * @requires angular/angular.js
+ * @requires hamster/hamster.js 
+ * @requires mousewheel/mousewheel.js 
  * @requires bootstrap/css/bootstrap.css
  * @requires dd:dd.css
  *
@@ -11,7 +13,7 @@
  * The `dd` is an DaruDar module which contains all of the core DaruDar services.
  */
 
-var appModule = angular.module('dd',['ngLocale'])
+var appModule = angular.module('dd',['ngLocale','monospaced.mousewheel'])
         /*
         .config(['$provide',function($provide){
             $provide.factory('$ddData', function(){

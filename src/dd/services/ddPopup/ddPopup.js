@@ -23,7 +23,7 @@
  *   * `{object=}` `content` — Содержимое окна. Параметры:
  *      * `{string=}` `template` [default] '' — Шаблон контента
  *      * `{jQuery element=}` `el` — Элемент, который будет использован под контент вместо шаблона
- *      * `{string|integer=}` `width` [default] `$($window).width() / 2` — Ширина окна
+ *      * `{string|integer=}` `width` [default] `auto` — Ширина окна
  *      * `{string|integer=}` `height` [default] 'auto' — Высота окна 
  * 
  * @return {object} Экземпляр попапа
@@ -34,11 +34,11 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
         notLoadedTpl = "<p>" + $locale.loadingFail + "</p>",
         bodyEl = angular.element('body'),
         popupTpl =  $compile(angular.element(
-            '<div ng-click="onMaskClick($event)" class="dd-b-popup state_active" ng-animate="{enter:\'dd-a-fade-enter\', leave:\'dd-a-fade-leave\'}">' +
+            '<div ng-click="onMaskClick($event)" ng-class="title ? \'\' : \'no_title\'" class="dd-b-popup state_active" ng-animate="{enter:\'dd-a-fade-enter\', leave:\'dd-a-fade-leave\'}">' +
                 '<div class="dd-b-popup-h">' +
                     '<div class="dd-b-popup-hh">' +
                         '<div class="modal _c{{$id}}">' +
-                            '<div class="modal-header" ng-class="title ? \'\' : \'mod_notitle\'">' +
+                            '<div class="modal-header">' +
                                 '<button ng-click="close()" type="button" class="close">×</button>' +
                                 '<h3>{{title}}</h3>' +
                              '</div>' +
@@ -59,7 +59,7 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
             template: '',
             el: null,
             height: 'auto',
-            width: $($window).width() / 2
+            width: 'auto'
         },
         /**
          * @ngdoc function
@@ -116,12 +116,22 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
      * @description
      * **static** Возвращает максимальные размеры контента, при условии, что попап без скрола вписан в размеры окна.
      *
+     * @param {String} mod Модификация
      * @return {object} Размеры контента {width: integer, height: integer}
      */
-    constructPopup.getViewSize = function(){
+    constructPopup.getViewSize = function(mod){
+        var marginWidth = 60;
+        var marginHeight = 65;
+        switch (mod){
+            case 'fit': 
+                marginWidth = 0;
+                marginHeight = 0;
+                break;
+        }
+        
         return {
-            width: $($window).width() - 60,
-            height: $($window).height() - 65
+            width: $($window).width() - marginWidth,
+            height: $($window).height() - marginHeight
         };
     }
     return constructPopup;
@@ -143,7 +153,7 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
             close.call(self);
         };
         scope.onMaskClick = function(e){
-            if($(e.target).closest(self._contentEl).length > 0) return;
+            if($(e.target).closest(self._modalEl).length > 0) return;
             close.call(self);
         }
           
@@ -153,7 +163,7 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
             self._contentSel = '.dd-b-popup-content._c'+scope.$id;
              
             el.addClass('mod_' + self.mod);
-              
+                          
             self._animator = $animator(scope, {
                 ngAnimate: el.attr('ng-animate')
             });
@@ -163,6 +173,7 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
                     var contentEl = self._el.find(self._contentSel);
                       
                     self._contentEl = contentEl;
+                    self._modalEl = self._el.find(self._modalSel);;
                         
                     if(content.template){
                         $compile($(content.template))(scope, function(el){
@@ -171,8 +182,10 @@ defineFactory('$ddPopup', ['$rootScope', '$q', '$locale', '$compile', '$animator
                     } else if(content.el){
                         contentEl.empty().append(content.el);
                     }
-                    scope.width = toSize(content.width || scope.width);
-                    scope.height = toSize(content.height || scope.height);
+                    if(self.mod != 'fit') {
+                        scope.width = toSize(content.width || scope.width);
+                        scope.height = toSize(content.height || scope.height);
+                    }
                 }, 0);
             });
               

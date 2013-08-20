@@ -56,7 +56,8 @@
     -o-transition: 0.2s ease top; /* Opera */
     transition: 0.2s ease top; /* Future Browsers */
     }
-.methods {
+.methods,
+.properties {
     padding: 0;
     }    
 .noscroll .navbar-fixed-top {
