@@ -122,7 +122,7 @@ minified DaruDar front-end files:
         grunt
   
 
-The build output can be located under the `build` directory. Подробнее о структуре этой папки можно узнать в [Руководстве разработчика](http://develop.darudar.org/misc/guide).
+The build output can be located under the `build` directory. Подробнее о структуре этой папки можно узнать в [Руководстве разработчика](http://dev.darudar.org/misc/guide).
 
 
 <a name="H1_5"></a>
