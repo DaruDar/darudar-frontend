@@ -1,0 +1,97 @@
+@ngdoc overview
+@name Hellow World!
+@description
+
+# Пример создания компонента
+
+Создадим компонент, который отобразит надпись *Hellow World!*
+
+Переходим в папку проекта:
+
+    cd darudar-frontend 
+
+Наш компонент будет вызываться через директиву *dd-hellow*, которая принадлежит модулю *dd*. Cоздадим папку компонента:
+
+    mkdir src/dd/directives/ddHellow
+
+Теперь можно создать файл с кодом компонента:
+
+    nano src/dd/directives/ddHellow/ddHellow.js
+    
+<pre>
+/**
+ * @ngdoc directive
+ * @name dd.directive:ddHellow
+ * @function
+ *
+ * Укажем, что наш компонент использует стили описанные в файле ddHellow.css
+ * @requires dd.directive:ddHellow:ddHellow.css
+ *
+ * @description
+ * Пример создания компонента
+ *
+ * @element ANY
+ * @param {expression} ddHellow Укажем кого приветствуем.
+ *
+ * @example
+ * Ниже расположен  пример использования компонента.
+    &lt;example module="ddDocs"&gt;
+      <file name="index.html">
+         <h2>Поприветствуем мир:</h2>
+         <div dd-hellow="World"></div>
+      </file>
+    </example>
+    
+ */
+ 
+defineDirective('ddHellow', function(){
+    return {
+        scope: {
+            name: '@ddHellow' // Параметр {{name}} примет значение атрибута dd-hellow
+        },
+        template:
+            // Разметка компонента
+            '<p class="dd-b-hellow">Hellow <span class="dd-b-hellow-name">{{name}}</span>!</p>', 
+        compile: function(tElement){
+            return function(scope, iElement){
+            };
+        }
+    };
+ 
+});
+</pre>
+
+Опишем стили компонента:
+
+    nano src/dd/directives/ddHellow/ddHellow.css
+
+<pre>
+.dd-b-hellow {
+	font-size: 16px;
+	}
+    .dd-b-hellow-name {
+	    color: orange;
+	    }
+</pre>
+
+Компонент готов!
+
+Теперь можно обновить документацию и посмотреть в действии пример использования компонента, который мы описали использовав директиву *@example*. Выполним команду менеджера задач:
+
+    grunt docs 
+
+Пройдя по ссылке *api/dd.directive:ddHellow* увидим описание компонента, и ниже рабочий пример его использования:
+
+<img class="diagram" src="img/misc/ddHellow.png" height="800">
+
+Пример использования можно открыть в {@link http://plnkr.co} для этого достаточно нажать кнопку:
+
+<img class="diagram" src="img/misc/goplnkr.png" width="100%">
+
+<img class="diagram" src="img/misc/plunker.png" width="100%">
+
+Тут мы видим все подгружаемые файлы. Если потребуется отладить работу компонента, достаточно внести локальные изменения в соотв. файлы и нажать в plnkr кнопку обновления. 
+Если работа через plnkr не кажется не удобной, то можно нажать кнопку *Download your Plunk as a zip file*, скачать код и, в привычном режиме, отлаживать локально работу компонента.
+
+
+
