@@ -1,0 +1,110 @@
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "dd-icon-set";
+  src:url("fonts/dd-icon-set.eot");
+  src:url("fonts/dd-icon-set.eot?#iefix") format("embedded-opentype"),
+    url("fonts/dd-icon-set.ttf") format("truetype"),
+    url("fonts/dd-icon-set.svg#dd-icon-set") format("svg"),
+    url("fonts/dd-icon-set.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "dd-icon-set";
+  content: attr(data-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+[class^="dd-icon-"]:before,
+[class*=" dd-icon-"]:before {
+  font-family: "dd-icon-set";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.dd-icon-activity:before {
+  content: "a";
+}
+
+.dd-icon-back:before {
+  content: "b";
+}
+
+.dd-icon-book:before {
+  content: "c";
+}
+
+.dd-icon-facebook:before {
+  content: "d";
+}
+
+.dd-icon-group:before {
+  content: "e";
+}
+
+.dd-icon-like:before {
+  content: "f";
+}
+
+.dd-icon-meeting:before {
+  content: "g";
+}
+
+.dd-icon-message:before {
+  content: "h";
+}
+
+.dd-icon-microphone:before {
+  content: "i";
+}
+
+.dd-icon-navigation:before {
+  content: "j";
+}
+
+.dd-icon-search:before {
+  content: "k";
+}
+
+.dd-icon-settings:before {
+  content: "l";
+}
+
+.dd-icon-share:before {
+  content: "m";
+}
+
+.dd-icon-user:before {
+  content: "n";
+}
+
+.dd-icon-view:before {
+  content: "o";
+}
+
+.dd-icon-vk:before {
+  content: "p";
+}
+
