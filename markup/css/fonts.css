@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'proxima-light';
+    src: url('../fonts/proxima_nova_light-webfont.eot');
+    src: url('../fonts/proxima_nova_light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/proxima_nova_light-webfont.svg') format('svg'),
+         url('../fonts/proxima_nova_light-webfont.woff') format('woff'),
+         url('../fonts/proxima_nova_light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima-regular';
+    src: url('../fonts/proxima_nova_regular-webfont.eot');
+    src: url('../fonts/proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/proxima_nova_regular-webfont.svg') format('svg'),
+         url('../fonts/proxima_nova_regular-webfont.woff') format('woff'),
+         url('../fonts/proxima_nova_regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+  font-family: "darudar-icon-set";
+  src:url("../fonts/darudar-icon-set.eot");
+  src:url("../fonts/darudar-icon-set.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/darudar-icon-set.svg") format("svg"),
+    url("../fonts/darudar-icon-set.woff") format("woff"),
+    url("../fonts/darudar-icon-set.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "darudar-icon-set";
+  content: attr(data-icon);
+  font-size:20px;
+  vertical-align:middle;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "darudar-icon-set";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.icon-book:before {
+  content: "a";
+}
+
+.icon-like:before {
+  content: "b";
+}
+
+.icon-meeting:before {
+  content: "c";
+}
+
+.icon-message:before {
+  content: "d";
+}
+
+.icon-share:before {
+  content: "e";
+}
+
+.icon-user:before {
+  content: "f";
+}
+
