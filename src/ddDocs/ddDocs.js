@@ -1,7 +1,7 @@
 /**
  * 
  * @requires *
- * @requires localStorageService/localStorageModule.js
+ * @requires localStorageService/angular-local-storage.js
  * @requires ddDocs:ddDocs.css
  *
  * @ngdoc overview

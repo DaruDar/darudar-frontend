@@ -1,0 +1,85 @@
+.dd-b-mainmenu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    -webkit-transition: 0.2s ease all; /* Safari/Chrome */
+    -moz-transition: 0.2s ease all; /* Firefox */
+    -ms-transition: 0.2s ease all; /* IE10 */
+    -o-transition: 0.2s ease all; /* Opera */
+    transition: 0.2s ease all; /* Future Browsers */        
+    background-color: rgba(0,0,0,0.2);
+    }
+    .dd-b-mainmenu-h { 
+        height: 100%;        
+        }
+    .dd-b-mainmenu-hh {
+        position: relative;
+        overflow: hidden;
+        overflow-y: auto;
+        background: white;
+        width: 100%;
+        height: 100%;
+        
+        box-shadow: 0 0 15px rgba(0,0,0,.4);
+        
+        -webkit-transition: 0.2s ease all; /* Safari/Chrome */
+        -moz-transition: 0.2s ease all; /* Firefox */
+        -ms-transition: 0.2s ease all; /* IE10 */
+        -o-transition: 0.2s ease all; /* Opera */
+        transition: 0.2s ease all; /* Future Browsers */   
+        left: 0;         
+        } 
+    .dd-b-mainmenu-content > * {
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px;
+        cursor: pointer;     
+        -webkit-transition: 0.2s ease all; /* Safari/Chrome */
+        -moz-transition: 0.2s ease all; /* Firefox */
+        -ms-transition: 0.2s ease all; /* IE10 */
+        -o-transition: 0.2s ease all; /* Opera */
+        transition: 0.2s ease all; /* Future Browsers */   
+        }
+        .dd-b-mainmenu-content > *:hover {
+            background-color: #2fbbc8;
+            }   
+            .dd-b-mainmenu-content > *:hover .dd-icon {
+                color: white;
+                }          
+        .dd-b-mainmenu-content .dd-icon {
+            margin: 0 15px;
+            font-size: 48px;
+            height: 60px;
+            line-height: 60px;
+            padding: 7px 0;
+            display: inline-block;
+            vertical-align: middle; 
+            -webkit-transition: 0.2s ease color; /* Safari/Chrome */
+            -moz-transition: 0.2s ease color; /* Firefox */
+            -ms-transition: 0.2s ease color; /* IE10 */
+            -o-transition: 0.2s ease color; /* Opera */
+            transition: 0.2s ease color; /* Future Browsers */   
+            }
+.dd-b-mainmenu-a-show .dd-b-mainmenu-hh {   
+    left: -100%;
+    }
+    .dd-b-mainmenu-a-show.dd-b-mainmenu-a-show-active .dd-b-mainmenu-hh {  
+        left: 0px;
+        }
+.dd-b-mainmenu-a-hide.dd-b-mainmenu-a-hide-active .dd-b-mainmenu-hh {  
+    left: -100%;
+    }
+                
+.dd-b-mainmenu-a-show {
+    background-color: rgba(0,0,0,0);
+    }
+    .dd-b-mainmenu-a-show.dd-b-mainmenu-a-show-active {   
+        background-color: rgba(0,0,0,0.2);
+        }    
+.dd-b-mainmenu-a-hide.dd-b-mainmenu-a-hide-active {   
+    background-color: rgba(0,0,0,0);
+    }                 
